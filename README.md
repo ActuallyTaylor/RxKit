@@ -1,6 +1,6 @@
 # RxKit
 
-A frontend to the [RxNorm APIs])(https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html) written in Swift.
+A frontend to the [RxNorm APIs](https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html) written in Swift.
 
 ## API Coverage
 | Active | Api Name                                                                                                     | Path                           | Description                                                                                | Scope                  |
