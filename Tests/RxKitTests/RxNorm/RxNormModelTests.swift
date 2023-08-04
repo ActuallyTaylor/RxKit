@@ -4,7 +4,7 @@ import XCTest
 final class RxNormModelTests: XCTestCase {
     /// Tests the ``DrugGroupWrapper`` model
     func testDrugGroupWrapperModel() throws {
-        XCTAssert(DrugGroupWrapper.example != nil)
+        XCTAssert(DrugGroup.example != nil)
     }
 
     /// Tests the ``ConceptGroup`` model when there is an empty properties section
