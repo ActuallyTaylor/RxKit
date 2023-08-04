@@ -1,8 +1,13 @@
 # RxKit
 
-A frontend to the [RxNorm APIs](https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html) written in Swift.
+A frontend to the [RxNav APIs](https://lhncbc.nlm.nih.gov/RxNav/APIs/index.html) written in Swift.
 
-## API Coverage
+## Why this API?
+I made myself a medication tracking app and wanted a nice way to look up the medications. I decided this would also be really good practice in writing an API frontend in Swift. The API is based on the [MastodonKit](https://github.com/ActuallyTaylor/MastodonKit) API that I use a ton in developing Manny, my Mastodon app.
+
+## RxNorm API Coverage
+This list covers all of the RxNorm API routes. These routes are all available without an API key.
+
 | Active | Api Name                                                                                                     | Path                           | Description                                                                                | Scope                  |
 | ------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------ | ---------------------- |
 | ❌     | [filterByProperty](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.filterByProperty.html)                   | /rxcui/rxcui/filter            | Concept RXCUI if the predicate is true                                                     | Active                 |
