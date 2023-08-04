@@ -5,7 +5,7 @@ A frontend to the [RxNav APIs](https://lhncbc.nlm.nih.gov/RxNav/APIs/index.html)
 ## Why this API?
 I made myself a medication tracking app and wanted a nice way to look up the medications. I decided this would also be really good practice in writing an API frontend in Swift. The API is based on the [MastodonKit](https://github.com/ActuallyTaylor/MastodonKit) API that I use a ton in developing Manny, my Mastodon app.
 
-## RxNorm API Coverage (9/33 endpoints)
+## RxNorm API Coverage (12/33 - 36% Coverage)
 This list covers all of the RxNorm API routes. These routes are all available without an API key.
 
 | Available | Api Name                                                                                                     | Path                           | Description                                                                                | Scope                  |
@@ -23,9 +23,9 @@ This list covers all of the RxNorm API routes. These routes are all available wi
 | ✅     | [getApproximateMatch](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html)             | /approximateTerm               | Concept and atom IDs approximately matching a query                                        | Active or Current      |
 | ✅     | [getDisplayTerms](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getDisplayTerms.html)                     | /displaynames                  | Strings to support auto-completion in a user interface                                     | Active                 |
 | ✅     | [getDrugs](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getDrugs.html)                                   | /drugs                         | Drugs related to a specified name                                                          | Active                 |
-| ❌     | [getIdTypes](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getIdTypes.html)                               | /idtypes                       | Identifier types                                                                           | Current                |
-| ❌     | [getMultiIngredBrand](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getMultiIngredBrand.html)             | /brands                        | Brands containing specified ingredients                                                    | Active                 |
-| ❌     | [getNDCProperties](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getNDCProperties.html)                   | /ndcproperties                 | National Drug Code (NDC) details                                                           | Current and Historical |
+| ✅     | [getIdTypes](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getIdTypes.html)                               | /idtypes                       | Identifier types                                                                           | Current                |
+| ✅     | [getMultiIngredBrand](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getMultiIngredBrand.html)             | /brands                        | Brands containing specified ingredients                                                    | Active                 |
+| ✅     | [getNDCProperties](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getNDCProperties.html)                   | /ndcproperties                 | National Drug Code (NDC) details                                                           | Current and Historical |
 | ❌     | [getNDCStatus](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getNDCStatus.html)                           | /ndcstatus                     | Status of a National Drug Code (NDC)                                                       | Current and Historical |
 | ❌     | [getNDCs](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getNDCs.html)                                     | /rxcui/rxcui/ndcs              | National Drug Codes (NDC) associated with a concept                                        | Active                 |
 | ❌     | [getPropCategories](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getPropCategories.html)                 | /propCategories                | RxNav property categories                                                                  | Active                 |

@@ -6,31 +6,31 @@ final class RxNormGetAllNDCsByStatusTests: XCTestCase {
 
     /// Tests the ``RxNorm.getAllNDCsByStatus(status:)`` endpoint. Specifically the active status.
     func testGetAllNDCsByStatus_active() async throws {
-        let request = RxNorm.getAllNDCsByStatus(status: [.active])
+        let request = RxNorm.getAllNDCsByStatus(statuses: [.active])
         _ = try await client.run(request)
     }
     
     /// Tests the ``RxNorm.getAllNDCsByStatus(status:)`` endpoint. Specifically the alien status.
     func testGetAllNDCsByStatus_alien() async throws {
-        let request = RxNorm.getAllNDCsByStatus(status: [.alien])
+        let request = RxNorm.getAllNDCsByStatus(statuses: [.alien])
         _ = try await client.run(request)
     }
     
     /// Tests the ``RxNorm.getAllNDCsByStatus(status:)`` endpoint. Specifically the all status.
     func testGetAllNDCsByStatus_all() async throws {
-        let request = RxNorm.getAllNDCsByStatus(status: [.all])
+        let request = RxNorm.getAllNDCsByStatus(statuses: [.all])
         _ = try await client.run(request)
     }
     
     /// Tests the ``RxNorm.getAllNDCsByStatus(status:)`` endpoint. Specifically the obsolete status.
     func testGetAllNDCsByStatus_obsolete() async throws {
-        let request = RxNorm.getAllNDCsByStatus(status: [.obsolete])
+        let request = RxNorm.getAllNDCsByStatus(statuses: [.obsolete])
         _ = try await client.run(request)
     }
     
     /// Tests the ``RxNorm.getAllNDCsByStatus(status:)`` endpoint. Specifically the obsolete status.
     func testGetAllNDCsByStatus() async throws {
-        let request = RxNorm.getAllNDCsByStatus(status: [.active, .alien, .obsolete])
+        let request = RxNorm.getAllNDCsByStatus(statuses: [.active, .alien, .obsolete])
         _ = try await client.run(request)
     }
 

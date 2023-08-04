@@ -17,6 +17,7 @@ public struct Client {
         
         let urlRequest = URLRequest(url: url, request: request)
         let task: (Data, URLResponse) = try await session.data(for: urlRequest)
+
         guard let response = task.1 as? HTTPURLResponse else {
             debugPrint("URL does task is not a valid type")
             throw ClientError.invalidURLResponse

@@ -21,4 +21,16 @@ final class RxNormMiscTests: XCTestCase {
         let request = RxNorm.getDisplayTerms()
         _ = try await client.run(request)
     }
+    
+    /// Tests the ``RxNorm.getIdTypes()`` endpoint
+    func testGetIdTypes() async throws {
+        let request = RxNorm.getIdTypes()
+        _ = try await client.run(request)
+    }
+    
+    /// Tests the ``RxNorm.getMultiIngredBrand()`` endpoint
+    func testGetMultiIngredBrand() async throws {
+        let request = RxNorm.getMultiIngredBrand(ingredientIDs: ["8896", "20610"])
+        _ = try await client.run(request)
+    }
 }

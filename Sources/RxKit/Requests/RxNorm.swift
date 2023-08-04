@@ -47,10 +47,10 @@ public enum RxNorm {
     }
     
     /// The resource is a list of National Drug Codes (NDCs) that have appeared in RxNav's data sources. The list is optionally filtered by the status parameter.
-    public static func getAllNDCsByStatus(status: [NDCStatus]) -> Request<NDCList> {
+    public static func getAllNDCsByStatus(statuses: [NDCStatus]) -> Request<NDCList> {
         var payload = HTTPSPayload()
         payload.queryItems = [
-            .init(name: "status", value: status.toSpaceSeparated())
+            .init(name: "status", value: statuses.toSpaceSeparated())
         ]
         
         return Request(path: "/REST/allNDCstatus.json", method: .get(payload))
@@ -90,6 +90,33 @@ public enum RxNorm {
     /// Gets the names used by RxNav for auto completion. This is a large list which includes names of ingredients, precise ingredients, brands, and synonyms of branded packs.
     public static func getDisplayTerms() -> Request<DisplayTermsList> {
         return Request(path: "/REST/displaynames.json", method: .get(.empty))
+    }
+
+    /// Get the valid identifier types of the RxNorm data set.
+    public static func getIdTypes() -> Request<IDTypeList> {
+        return Request(path: "/REST/idtypes.json", method: .get(.empty))
+    }
+    
+    /// Get the brands that contain all the ingredients specified (as RXCUIs) by the ingredientids parameter.
+    public static func getMultiIngredBrand(ingredientIDs: [String]) -> Request<BrandGroup> {
+        var payload = HTTPSPayload()
+        payload.queryItems = [
+            .init(name: "ingredientids", value: ingredientIDs.toSpaceSeparated()),
+        ]
+
+        return Request(path: "/REST/brands.json", method: .get(payload))
+    }
+    
+    /// https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getNDCProperties.html
+    /// Get National Drug Code (NDC) properties. This function returns NDC properties for an NDC, or for NDCs with a given two-segment prefix, or for the NDC related to a structured product label, or for the NDCs currently related to a concept by RxNorm.
+    public static func getNDCProperties(id: String, statuses: [NDCStatus] = [.active]) -> Request<NDCPropertyList> {
+        var payload = HTTPSPayload()
+        payload.queryItems = [
+            .init(name: "id", value: id),
+            .init(name: "ndcstatus", value: statuses.toSpaceSeparated())
+        ]
+
+        return Request(path: "/REST/ndcproperties.json", method: .get(payload))
     }
 
 }
