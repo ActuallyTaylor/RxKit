@@ -5,7 +5,7 @@ A frontend to the [RxNav APIs](https://lhncbc.nlm.nih.gov/RxNav/APIs/index.html)
 ## Why this API?
 I made myself a medication tracking app and wanted a nice way to look up the medications. I decided this would also be really good practice in writing an API frontend in Swift. The API is based on the [MastodonKit](https://github.com/ActuallyTaylor/MastodonKit) API that I use a ton in developing Manny, my Mastodon app.
 
-## RxNorm API Coverage
+## RxNorm API Coverage (9/33 endpoints)
 This list covers all of the RxNorm API routes. These routes are all available without an API key.
 
 | Active | Api Name                                                                                                     | Path                           | Description                                                                                | Scope                  |
