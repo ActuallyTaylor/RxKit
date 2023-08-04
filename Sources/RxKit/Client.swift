@@ -1,10 +1,11 @@
 import Foundation
 
 public struct Client {
-    let baseURL: String = "https://rxnav.nlm.nih.gov"
+    let baseURL: String
     let session: URLSession
     
-    public init(session: URLSession = .shared) {
+    public init(baseURL: String = "https://rxnav.nlm.nih.gov", session: URLSession = .shared) {
+        self.baseURL = baseURL
         self.session = session
     }
     
