@@ -8,7 +8,7 @@ I made myself a medication tracking app and wanted a nice way to look up the med
 ## RxNorm API Coverage (9/33 endpoints)
 This list covers all of the RxNorm API routes. These routes are all available without an API key.
 
-| Active | Api Name                                                                                                     | Path                           | Description                                                                                | Scope                  |
+| Available | Api Name                                                                                                     | Path                           | Description                                                                                | Scope                  |
 | ------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------ | ---------------------- |
 | ❌     | [filterByProperty](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.filterByProperty.html)                   | /rxcui/rxcui/filter            | Concept RXCUI if the predicate is true                                                     | Active                 |
 | ❌     | [findRelatedNDCs](https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.findRelatedNDCs.html)                     | /relatedndc                    | NDCs related by NDC product, RxNorm concept, or RxNorm drug product                        | Active                 |
