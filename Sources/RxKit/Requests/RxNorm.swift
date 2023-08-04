@@ -3,7 +3,7 @@ public enum RxNorm {
     /// Get the drug products associated with a specified name. The name can be an ingredient, brand name, clinical dose form, branded dose form, clinical drug component, or branded drug component. The following table shows examples of input and the types of drug products returned. See default paths for the paths traveled to get concepts for each term type.
     ///
     /// https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getDrugs.html
-    /// - Parameter query: <#query description#>
+    /// - Parameter query: Name of ingredient, brand, clinical dose form, branded dose form, clinical drug component, or branded drug component.
     /// - Returns: A request for a ``DrugGroup``
     public static func getDrugs(query: String) -> Request<DrugGroup> {
         var payload = HTTPSPayload()
@@ -111,9 +111,9 @@ public enum RxNorm {
     ///
     /// https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html
     /// - Parameters:
-    ///   - term: <#term description#>
-    ///   - maxEntries: <#maxEntries description#>
-    ///   - option: <#option description#>
+    ///   - term: String, of which to find approximate matches.
+    ///   - maxEntries: Coarse control of number of results.
+    ///   - option: Scope of search.
     /// - Returns: A request for an ``ApproximateGroup``.
     public static func getApproximateMatch(term: String, maxEntries: Int = 20, option: ApproximateMatchOption = .current) -> Request<ApproximateGroup> {
         var payload = HTTPSPayload()
@@ -145,7 +145,7 @@ public enum RxNorm {
     /// Get the brands that contain all the ingredients specified (as RXCUIs) by the ingredientids parameter.
     ///
     /// https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getMultiIngredBrand.html
-    /// - Parameter ingredientIDs: <#ingredientIDs description#>
+    /// - Parameter ingredientIDs: Ingredient RXCUI(s).
     /// - Returns: A request for a ``BrandGroup``
     public static func getMultiIngredBrand(ingredientIDs: [String]) -> Request<BrandGroup> {
         var payload = HTTPSPayload()
@@ -160,8 +160,8 @@ public enum RxNorm {
     ///
     /// https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getNDCProperties.html
     /// - Parameters:
-    ///   - id: <#id description#>
-    ///   - statuses: <#statuses description#>
+    ///   - id: NDC (CMS 11-digit, or 5-3 or 4-4-2), or RXCUI, or FDA SPL set ID.
+    ///   - statuses: Status filter for NDCs to retrieve.
     /// - Returns: A request for an ``NDCPropertyList``
     public static func getNDCProperties(id: String, statuses: [NDCStatus] = [.active]) -> Request<NDCPropertyList> {
         var payload = HTTPSPayload()
