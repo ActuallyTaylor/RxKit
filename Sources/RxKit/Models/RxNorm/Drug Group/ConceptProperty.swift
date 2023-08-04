@@ -16,4 +16,6 @@ public struct ConceptProperty: Codable {
     public let suppress: String
     /// (Always empty)
     public let umlscui: String?
+    /// GENERALCARDINALITY Property
+    public let genCard: String?
 }

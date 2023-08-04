@@ -8,6 +8,7 @@ public struct DrugGroupWrapper: Codable {
         /// Related concepts having a certain TTY
         public let conceptGroup: [ConceptGroup]
     }
-    
+
     public let drugGroup: DrugGroup
 }
+

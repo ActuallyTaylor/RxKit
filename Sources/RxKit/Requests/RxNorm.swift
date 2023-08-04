@@ -67,4 +67,23 @@ public enum RxNorm {
         return Request(path: "/REST/rxcui/\(rxcui)/allProperties.json", method: .get(payload))
     }
 
+    /// Get RxNorm concepts related to the concept identified by rxcui. Related concepts may be of term types "IN", "MIN", "PIN", "BN", "SBD", "SBDC", "SBDF", "SBDG", "SCD", "SCDC", "SCDF", "SCDG", "DF", "DFG", "BPCK" and "GPCK". See default paths for the RxNorm relationship paths traveled to get concepts for each term type.
+    /// In the documentation this request takes the query parameter "expand" however there are no listed values and the example value does not work.
+    public static func getAllRelatedInfo(rxcui: String) -> Request<AllRelatedGroupsWrapper> {
+        let rxcui = rxcui.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? rxcui
+        return Request(path: "/REST/rxcui/\(rxcui)/allrelated.json", method: .get(.empty))
+    }
+    
+    /// Searches for strings in the data set that most closely match the term parameter.
+    /// This function is useful for strings where an exact or normalized string match (findRxcuiByString) does not find the desired results. For example, consider the following queries:
+    public static func getApproximateMatch(term: String, maxEntries: Int = 20, option: ApproximateMatchOption = .current) -> Request<ApproximateGroupWrapper> {
+        var payload = HTTPSPayload()
+        payload.queryItems = [
+            .init(name: "term", value: term),
+            .init(name: "maxEntries", value: String(maxEntries)),
+            .init(name: "option", value: String(option.rawValue))
+        ]
+        
+        return Request(path: "/REST/approximateTerm.json", method: .get(payload))
+    }
 }
