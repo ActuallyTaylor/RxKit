@@ -1,7 +1,7 @@
 import XCTest
 @testable import RxKit
 
-final class RxNormEndpointTests: XCTestCase {
+final class RxNormGetDrugTests: XCTestCase {
     private var client: Client = .init()
 
     /// Tests the ``RxNorm.getDrugs(name:)`` endpoint
@@ -9,6 +9,4 @@ final class RxNormEndpointTests: XCTestCase {
         let request = RxNorm.getDrugs(query: "cymbalta")
         _ = try await client.run(request)
     }
-    
-    
 }

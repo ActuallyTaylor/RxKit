@@ -27,7 +27,9 @@ extension URLComponents {
     }
     
     init?<Model>(baseURL: String, request: Request<Model>) {
-        guard let baseURL = URL(string: baseURL) else { return nil }
+        guard let baseURL = URL(string: baseURL) else { return
+            nil
+        }
         guard let completeURL = URL(string: request.path, relativeTo: baseURL) else { return nil }
         self.init(url: completeURL, resolvingAgainstBaseURL: true)
         
